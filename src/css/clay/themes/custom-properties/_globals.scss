@@ -1,0 +1,1003 @@
+// The keyword `clay-unset` allows unsetting a Sass variable value so it doesn't get output in the final CSS file.
+
+$clay-unset: clay-unset !default;
+
+// An alias for `$clay-unset`
+
+$c-unset: $clay-unset !default;
+
+$clay-unset-placeholder: clay-unset-placeholder !default;
+
+// Settings
+
+$enable-bs4-deprecated: true !default;
+$enable-c-inner: true !default;
+$enable-lexicon-flat-colors: true !default;
+$enable-scaling-components: true !default;
+$scaling-breakpoint-down: sm !default;
+
+// This enables Clay color functions to get the fallback color of a CSS Custom Property, convert it to the correct Sass type color, then process it using the corresponding Sass color function. The Clay color function will return a CSS color value. Set this variable to `false` if you want the Clay color function to return the CSS Custom Property without any modifications.
+// @link https://github.com/liferay/clay/issues/4306
+
+$enable-clay-color-functions-process-fallback: false !default;
+
+$enable-caret: false !default;
+$enable-rounded: true !default;
+$enable-shadows: true !default;
+$enable-gradients: false !default;
+$enable-transitions: true !default;
+$enable-prefers-reduced-motion-media-query: true !default;
+$enable-grid-classes: true !default;
+$enable-pointer-cursor-for-buttons: true !default;
+$enable-print-styles: true !default;
+$enable-responsive-font-sizes: false !default;
+$enable-validation-icons: true !default;
+$enable-deprecation-messages: true !default;
+
+// Deprecated, no longer affects any compiled CSS
+
+$enable-hover-media-query: false !default;
+
+// Clay Root
+
+$clay-root: () !default;
+$clay-root: clay-map-merge(
+	(
+		--white: #fff,
+		--gray-100: #f7f8f9,
+		--gray-200: #f1f2f5,
+		--gray-300: #e7e7ed,
+		--gray-400: #cdced9,
+		--gray-500: #a7a9bc,
+		--gray-600: #6b6c7e,
+		--gray-700: #495057,
+		--gray-800: #393a4a,
+		--gray-900: #272833,
+		--black: #000,
+		--white-values: #{255,
+		255,
+		255},
+		--gray-100-values: #{247,
+		248,
+		249},
+		--gray-200-values: #{241,
+		242,
+		245},
+		--gray-300-values: #{231,
+		231,
+		237},
+		--gray-400-values: #{205,
+		206,
+		217},
+		--gray-500-values: #{167,
+		169,
+		188},
+		--gray-600-values: #{107,
+		108,
+		126},
+		--gray-700-values: #{73,
+		80,
+		87},
+		--gray-800-values: #{57,
+		58,
+		74},
+		--gray-900-values: #{39,
+		40,
+		51},
+		--black-values: #{0,
+		0,
+		0},
+	),
+	$clay-root
+);
+
+$white: var(--white) !default;
+$gray-100: var(--gray-100) !default;
+$gray-200: var(--gray-200) !default;
+$gray-300: var(--gray-300) !default;
+$gray-400: var(--gray-400) !default;
+$gray-500: var(--gray-500) !default;
+$gray-600: var(--gray-600) !default;
+$gray-700: var(--gray-700) !default;
+$gray-800: var(--gray-800) !default;
+$gray-900: var(--gray-900) !default;
+$black: var(--black) !default;
+
+$grays: () !default;
+$grays: map-merge(
+	(
+		'100': $gray-100,
+		'200': $gray-200,
+		'300': $gray-300,
+		'400': $gray-400,
+		'500': $gray-500,
+		'600': $gray-600,
+		'700': $gray-700,
+		'800': $gray-800,
+		'900': $gray-900,
+	),
+	$grays
+);
+
+$blue: var(--blue, if($enable-lexicon-flat-colors, #4b9fff, #0b5fff)) !default;
+$indigo: var(
+	--indigo,
+	if($enable-lexicon-flat-colors, #7785ff, #6610f2)
+) !default;
+$purple: var(
+	--purple,
+	if($enable-lexicon-flat-colors, #af78ff, #6f42c1)
+) !default;
+$pink: var(--pink, if($enable-lexicon-flat-colors, #ff73c3, #e83e8c)) !default;
+$red: var(--red, if($enable-lexicon-flat-colors, #ff5f5f, #da1414)) !default;
+$orange: var(
+	--orange,
+	if($enable-lexicon-flat-colors, #ffb46e, #b95000)
+) !default;
+$yellow: var(
+	--yellow,
+	if($enable-lexicon-flat-colors, #ffd76e, #ffc107)
+) !default;
+$green: var(
+	--green,
+	if($enable-lexicon-flat-colors, #9be169, #287d3d)
+) !default;
+$teal: var(--teal, if($enable-lexicon-flat-colors, #50d2a0, #20c997)) !default;
+$cyan: var(--cyan, if($enable-lexicon-flat-colors, #5fc8ff, #17a2b8)) !default;
+
+$colors: () !default;
+$colors: map-merge(
+	(
+		'blue': $blue,
+		'indigo': $indigo,
+		'purple': $purple,
+		'pink': $pink,
+		'red': $red,
+		'orange': $orange,
+		'yellow': $yellow,
+		'green': $green,
+		'teal': $teal,
+		'cyan': $cyan,
+		'white': $white,
+		'gray': $gray-600,
+		'gray-dark': $gray-800,
+	),
+	$colors
+);
+
+$clay-root: clay-map-merge(
+	(
+		--primary: #0b5fff,
+		--primary-d1: #0053f0,
+		--primary-d2: #004ad7,
+		--primary-l1: #80acff,
+		--primary-l2: #b3cdff,
+		--primary-l3: #f0f5ff,
+		--primary-values: #{11,
+		95,
+		255},
+		--primary-d1-values: #{0,
+		83,
+		240},
+		--primary-d2-values: #{0,
+		74,
+		215},
+		--primary-l1-values: #{128,
+		172,
+		255},
+		--primary-l2-values: #{179,
+		205,
+		255},
+		--primary-l3-values: #{240,
+		245,
+		255},
+	),
+	$clay-root
+);
+
+$primary: var(--primary) !default;
+$primary-d1: var(--primary-d1) !default;
+$primary-d2: var(--primary-d2) !default;
+$primary-l1: var(--primary-l1) !default;
+$primary-l2: var(--primary-l2) !default;
+$primary-l3: var(--primary-l3) !default;
+
+$clay-root: clay-map-merge(
+	(
+		--secondary: #6b6c7e,
+		--secondary-d1: #393a4a,
+		--secondary-d2: #30313f,
+		--secondary-l1: #a7a9bc,
+		--secondary-l2: #cdced9,
+		--secondary-l3: #e7e7ed,
+		--secondary-values: #{167,
+		169,
+		188},
+		--secondary-d1-values: #{57,
+		58,
+		74},
+		--secondary-d2-values: #{48,
+		49,
+		63},
+		--secondary-l1-values: #{167,
+		169,
+		188},
+		--secondary-l2-values: #{205,
+		206,
+		217},
+		--secondary-l3-values: #{231,
+		231,
+		237},
+	),
+	$clay-root
+);
+
+$secondary: var(--secondary) !default;
+$secondary-d1: var(--secondary-d1) !default;
+$secondary-d2: var(--secondary-d2) !default;
+$secondary-l1: var(--secondary-l1) !default;
+$secondary-l2: var(--secondary-l2) !default;
+$secondary-l3: var(--secondary-l3) !default;
+
+$clay-root: clay-map-merge(
+	(
+		--info: #2e5aac,
+		--info-d1: #294f98,
+		--info-d2: #234584,
+		--info-l1: #89a7e0,
+		--info-l2: #eef2fa,
+	),
+	$clay-root
+);
+
+$info: var(--info) !default;
+$info-d1: var(--info-d1) !default;
+$info-d2: var(--info-d2) !default;
+$info-l1: var(--info-l1) !default;
+$info-l2: var(--info-l2) !default;
+
+$clay-root: clay-map-merge(
+	(
+		--success: #287d3c,
+		--success-d1: #226a33,
+		--success-d2: #1c5629,
+		--success-l1: #5aca75,
+		--success-l2: #edf9f0,
+	),
+	$clay-root
+);
+
+$success: var(--success) !default;
+$success-d1: var(--success-d1) !default;
+$success-d2: var(--success-d2) !default;
+$success-l1: var(--success-l1) !default;
+$success-l2: var(--success-l2) !default;
+
+$clay-root: clay-map-merge(
+	(
+		--warning: #b95000,
+		--warning-d1: #9f4500,
+		--warning-d2: #863a00,
+		--warning-l1: #ff8f39,
+		--warning-l2: #fff4ec,
+	),
+	$clay-root
+);
+
+$warning: var(--warning) !default;
+$warning-d1: var(--warning-d1) !default;
+$warning-d2: var(--warning-d2) !default;
+$warning-l1: var(--warning-l1) !default;
+$warning-l2: var(--warning-l2) !default;
+
+$clay-root: clay-map-merge(
+	(
+		--danger: #da1414,
+		--danger-d1: #c31212,
+		--danger-d2: #ab1010,
+		--danger-l1: #f48989,
+		--danger-l2: #feefef,
+	),
+	$clay-root
+);
+
+$danger: var(--danger) !default;
+$danger-d1: var(--danger-d1) !default;
+$danger-d2: var(--danger-d2) !default;
+$danger-l1: var(--danger-l1) !default;
+$danger-l2: var(--danger-l2) !default;
+
+$clay-root: clay-map-merge(
+	(
+		--light: $gray-200,
+		--light-d1: #e2e4ea,
+		--light-d2: #d3d6e0,
+		--light-l1: $gray-100,
+		--light-l2: $white,
+	),
+	$clay-root
+);
+
+$light: var(--light) !default;
+$light-d1: var(--light-d1) !default;
+$light-d2: var(--light-d2) !default;
+$light-l1: var(--light-l1) !default;
+$light-l2: var(--light-l2) !default;
+
+$clay-root: clay-map-merge(
+	(
+		--dark: $gray-900,
+		--dark-d1: #1c1c24,
+		--dark-d2: #111116,
+		--dark-l1: #30313f,
+		--dark-l2: #393a4a,
+	),
+	$clay-root
+);
+
+$dark: var(--dark) !default;
+$dark-d1: var(--dark-d1) !default;
+$dark-d2: var(--dark-d2) !default;
+$dark-l1: var(--dark-l1) !default;
+$dark-l2: var(--dark-l2) !default;
+
+$theme-colors: () !default;
+$theme-colors: map-merge(
+	(
+		'primary': $primary,
+		'secondary': $secondary,
+		'success': $success,
+		'info': $info,
+		'warning': $warning,
+		'danger': $danger,
+		'light': $light,
+		'dark': $dark,
+	),
+	$theme-colors
+);
+
+// Set a specific jump point for requesting color jumps
+
+$theme-color-interval: 8% !default;
+
+// The yiq lightness value that determines when the lightness of color changes from "dark" to "light". Acceptable values are between 0 and 255.
+
+$yiq-contrasted-threshold: 150 !default;
+
+$yiq-text-dark: $gray-900 !default;
+$yiq-text-light: $white !default;
+
+// Characters which are escaped by the `escape-svg` function
+// @deprecated as of v3.x with no replacement
+
+$escaped-characters: (('<', '%3c'), ('>', '%3e'), ('#', '%23')) !default;
+
+// Spacers
+
+$spacer: 1rem !default;
+$spacers: () !default;
+$spacers: map-deep-merge(
+	(
+		0: var(--spacer-0, 0),
+		1: var(--spacer-1, 0.25rem),
+		2: var(--spacer-2, 0.5rem),
+		3: var(--spacer-3, 1rem),
+		4: var(--spacer-4, 1.5rem),
+		5: var(--spacer-5, 3rem),
+		6: var(--spacer-6, 4.5rem),
+		7: var(--spacer-7, 6rem),
+		8: var(--spacer-8, 7.5rem),
+		9: var(--spacer-9, 9rem),
+		10: var(--spacer-10, 10rem),
+	),
+	$spacers
+);
+
+// This variable affects the `.h-*` and `.w-*` classes.
+
+$sizes: () !default;
+$sizes: map-merge(
+	(
+		25: 25%,
+		50: 50%,
+		75: 75%,
+		100: 100%,
+		auto: auto,
+	),
+	$sizes
+);
+
+// Reusable Values
+
+$line-height-lg: 1.5 !default;
+$line-height-sm: 1.5 !default;
+
+$border-color: $gray-300 !default;
+$border-width: 0.0625rem !default;
+
+$border-radius: var(--border-radius, 0.25rem) !default; // 4px
+$border-radius-lg: var(--border-radius-lg, 0.375rem) !default; // 6px
+$border-radius-sm: var(--border-radius-sm, 0.1875rem) !default; // 3px
+
+$rounded-border-radius: $border-radius !default;
+$rounded-circle-border-radius: var(
+	--rounded-circle-border-radius,
+	5000px
+) !default;
+$rounded-0-border-radius: var(--rounded-0-border-radius, 0) !default;
+$rounded-pill: var(--rounded-pill, 50rem) !default;
+
+$box-shadow-sm: 0 0.125rem 0.25rem rgba(var(--black-values), 0.075) !default;
+$box-shadow: 0 0.5rem 1rem rgba(var(--black-values), 0.15) !default;
+$box-shadow-lg: 0 1rem 3rem rgba(var(--black-values), 0.175) !default;
+
+// @deprecated as of v3.x with no replacement, Clay CSS inlines SVG icons for dropdown-toggle carets
+
+$caret-width: 0.3em !default;
+
+// @deprecated as of v3.x with no replacement, Clay CSS inlines SVG icons for dropdown-toggle carets
+
+$caret-vertical-align: $caret-width * 0.85 !default;
+
+// @deprecated as of v3.x with no replacement, Clay CSS inlines SVG icons for dropdown-toggle carets
+
+$caret-spacing: $caret-width * 0.85 !default;
+
+$transition-base: var(--transition-base, all 0.2s ease-in-out) !default;
+$transition-fade: var(--transition-fade, opacity 0.15s linear) !default;
+$transition-collapse: var(--transition-collapse, height 0.35s ease) !default;
+
+$embed-responsive-aspect-ratios: () !default;
+$embed-responsive-aspect-ratios: join(
+	((21 9), (16 9), (4 3), (1 1)),
+	$embed-responsive-aspect-ratios
+);
+
+$clay-root: clay-map-merge(
+	(
+		--component-focus-box-shadow: #{0 0 0 0.125rem $white,
+		0 0 0 0.25rem $primary-l1},
+		--component-focus-inset-box-shadow: #{inset 0 0 0 0.125rem $primary-l1,
+		inset 0 0 0 0.25rem $white},
+		--component-focus-inset-border-color: $primary-l1,
+	),
+	$clay-root
+);
+
+$component-focus-box-shadow: var(--component-focus-box-shadow) !default;
+$component-focus-inset-box-shadow: var(
+	--component-focus-inset-box-shadow
+) !default;
+
+$component-active-color: var(--component-active-color, $white) !default;
+$component-active-bg: var(
+	--component-active-bg-color,
+	$primary
+) !default;
+
+// Cursors
+
+$link-cursor: pointer !default;
+$disabled-cursor: not-allowed !default;
+
+// Grid
+
+$grid-breakpoints: (
+	xs: 0,
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px,
+) !default;
+
+@include _assert-ascending($grid-breakpoints, '$grid-breakpoints');
+@include _assert-starts-at-zero($grid-breakpoints, '$grid-breakpoints');
+
+// Grid columns
+
+$grid-columns: 12 !default;
+$grid-gutter-width: 24px !default;
+$grid-row-columns: 6 !default;
+
+// Containers
+
+$container-max-widths: (
+	sm: 540px,
+	md: 720px,
+	lg: 960px,
+	xl: 1140px,
+) !default;
+
+@include _assert-ascending($container-max-widths, '$container-max-widths');
+
+$container-form-lg: () !default;
+$container-form-lg: map-deep-merge(
+	(
+		breakpoint-up: lg,
+		padding-bottom: 3rem,
+		padding-top: 3rem,
+		padding-bottom-mobile: 1rem,
+		padding-top-mobile: 1rem,
+	),
+	$container-form-lg
+);
+
+$container-view: () !default;
+$container-view: map-deep-merge(
+	(
+		padding-bottom: 1.5rem,
+		padding-top: 1.5rem,
+	),
+	$container-view
+);
+
+// Fonts
+
+$moz-osx-font-smoothing: grayscale !default;
+$webkit-font-smoothing: antialiased !default;
+
+$font-import-url: null !default;
+
+// Use `inspect` for lists so that quoted items keep the quotes. See https://github.com/sass/sass/issues/2383#issuecomment-336349172
+
+$clay-root: clay-map-merge(
+	(
+		--font-family-sans-serif:
+			inspect(
+				(
+					system-ui,
+					-apple-system,
+					BlinkMacSystemFont,
+					'Segoe UI',
+					Roboto,
+					Oxygen-Sans,
+					Ubuntu,
+					Cantarell,
+					'Helvetica Neue',
+					Arial,
+					sans-serif,
+					'Apple Color Emoji',
+					'Segoe UI Emoji',
+					'Segoe UI Symbol'
+				)
+			),
+		--font-family-serif: inspect((Georgia, 'Times New Roman', Times, serif)),
+		--font-family-monospace:
+			inspect(
+				(
+					SFMono-Regular,
+					Menlo,
+					Monaco,
+					Consolas,
+					'Liberation Mono',
+					'Courier New',
+					monospace
+				)
+			),
+	),
+	$clay-root
+);
+
+$font-family-sans-serif: var(--font-family-sans-serif) !default;
+$font-family-serif: var(--font-family-serif) !default;
+$font-family-monospace: var(--font-family-monospace) !default;
+
+$font-family-base: $font-family-sans-serif !default;
+
+$font-scale: () !default;
+$font-scale: map-merge(
+	(
+		1: var(--font-size-1, 0.625rem),
+		2: var(--font-size-2, 0.75rem),
+		3: var(--font-size-3, 0.875rem),
+		4: var(--font-size-4, 1rem),
+		5: var(--font-size-5, 1.125rem),
+		6: var(--font-size-6, 1.25rem),
+		7: var(--font-size-7, 1.5rem),
+		8: var(--font-size-8, 1.75rem),
+		9: var(--font-size-9, 2rem),
+		10: var(--font-size-10, 2.25rem),
+		11: var(--font-size-11, 2.5rem),
+	),
+	$font-scale
+);
+
+$font-size-base: map-get($font-scale, 4) !default; // 16px
+$font-size-lg: map-get($font-scale, 5) !default; // 18px
+$font-size-sm: map-get($font-scale, 3) !default; // 14px
+
+$font-size-base-mobile: $font-size-base !default;
+$font-size-lg-mobile: $font-size-lg !default;
+
+$clay-root: clay-map-merge(
+	(
+		--font-weight-lighter: lighter,
+		--font-weight-light: 300,
+		--font-weight-normal: 400,
+		--font-weight-semi-bold: 600,
+		--font-weight-bold: 700,
+		--font-weight-bolder: 900,
+	),
+	$clay-root
+);
+
+$font-weight-lighter: var(--font-weight-lighter) !default;
+$font-weight-light: var(--font-weight-light) !default;
+$font-weight-normal: var(--font-weight-normal) !default;
+$font-weight-semi-bold: var(--font-weight-semi-bold) !default;
+$font-weight-bold: var(--font-weight-bold) !default;
+$font-weight-bolder: var(--font-weight-bolder) !default;
+
+$font-weight-base: $font-weight-normal !default;
+
+$line-height-base: 1.5 !default;
+
+// Headings h1-h6
+
+$headings-margin-bottom: map-get($spacers, 2) !default;
+$headings-font-family: null !default;
+$headings-font-weight: $font-weight-bold !default;
+$headings-line-height: 1.2 !default;
+$headings-color: null !default;
+
+$headings: () !default;
+$headings: map-deep-merge(
+	(
+		color: var(--headings-color, $headings-color),
+		font-family: var(--headings-font-family, $headings-font-family),
+		font-weight: var(--headings-font-weight, $headings-font-weight),
+		line-height: var(--headings-line-height, $headings-line-height),
+		margin-bottom: var(--headings-margin-bottom, $headings-margin-bottom),
+	),
+	$headings
+);
+
+
+// h1, .h1
+
+$h1-font-size: 1.625rem !default; // 26px
+$h1-font-size-mobile: null !default;
+
+$h1: () !default;
+$h1: map-deep-merge(
+	(
+		font-size: var(--h1-font-size, $h1-font-size),
+		media-breakpoint-down: (
+			sm: (
+				font-size: $h1-font-size-mobile,
+			),
+		),
+	),
+	$h1
+);
+
+// h2, .h2
+
+$h2-font-size: 1.375rem !default; // 22px
+$h2-font-size-mobile: null !default;
+
+$h2: () !default;
+$h2: map-deep-merge(
+	(
+		font-size: var(--h2-font-size, $h2-font-size),
+		media-breakpoint-down: (
+			sm: (
+				font-size: $h2-font-size-mobile,
+			),
+		),
+	),
+	$h2
+);
+
+// h3, .h3
+
+$h3-font-size: 1.1875rem !default; // 19px
+$h3-font-size-mobile: null !default;
+
+$h3: () !default;
+$h3: map-deep-merge(
+	(
+		font-size: var(--h3-font-size, $h3-font-size),
+		media-breakpoint-down: (
+			sm: (
+				font-size: $h3-font-size-mobile,
+			),
+		),
+	),
+	$h3
+);
+
+// h4, .h4
+
+$h4-font-size: 1rem !default; // 16px
+$h4-font-size-mobile: null !default;
+
+$h4: () !default;
+$h4: map-deep-merge(
+	(
+		font-size: var(--h4-font-size, $h4-font-size),
+		media-breakpoint-down: (
+			sm: (
+				font-size: $h4-font-size-mobile,
+			),
+		),
+	),
+	$h4
+);
+
+// h5, .h5
+
+$h5-font-size: 0.875rem !default; // 14px
+$h5-font-size-mobile: null !default;
+
+$h5: () !default;
+$h5: map-deep-merge(
+	(
+		font-size: var(--h5-font-size, $h5-font-size),
+		media-breakpoint-down: (
+			sm: (
+				font-size: $h5-font-size-mobile,
+			),
+		),
+	),
+	$h5
+);
+
+// h6, .h6
+
+$h6-font-size: 0.8125rem !default; // 13px
+$h6-font-size-mobile: null !default;
+
+$h6: () !default;
+$h6: map-deep-merge(
+	(
+		font-size: var(--h6-font-size, $h6-font-size),
+		media-breakpoint-down: (
+			sm: (
+				font-size: $h6-font-size-mobile,
+			),
+		),
+	),
+	$h6
+);
+
+// Body
+
+$body-bg: $white !default;
+$body-color: $gray-900 !default;
+$body-moz-osx-font-smoothing: $moz-osx-font-smoothing !default;
+$body-webkit-font-smoothing: $webkit-font-smoothing !default;
+$body-text-align: inherit !default;
+
+$c-body: () !default;
+$c-body: map-merge(
+	(
+		background-color: var(--body-bg-color, $body-bg),
+		color: var(--body-color, $body-color),
+		font-family: var(--body-font-family, $font-family-base),
+		font-size: var(--body-font-size, $font-size-base),
+		-moz-osx-font-smoothing: $body-moz-osx-font-smoothing,
+		-webkit-font-smoothing: $body-webkit-font-smoothing,
+		font-weight: var(--body-font-weight, $font-weight-base),
+		line-height: var(--body-line-height, $line-height-base),
+		margin: 0,
+		-ms-overflow-style: scrollbar,
+		text-align: $body-text-align,
+	),
+	$c-body
+);
+
+// Button
+
+$c-button-base: () !default;
+$c-button-base: map-merge(
+	(
+		cursor: $link-cursor,
+		-webkit-appearance: button,
+	),
+	$c-button-base
+);
+
+// Link
+
+$link-color: $primary !default;
+$link-decoration: none !default;
+$link-hover-color: $primary-d2 !default;
+$link-hover-decoration: underline !default;
+
+$link: () !default;
+$link: map-deep-merge(
+	(
+		color: var(--link-color, $link-color),
+		text-decoration: var(--link-text-decoration, $link-decoration),
+		text-underline-position: var(--link-text-underline-position),
+		hover: (
+			color: var(--link-hover-color, $link-hover-color),
+			text-decoration: var(--link-hover-text-decoration, $link-hover-decoration),
+		),
+	),
+	$link
+);
+
+// Darken percentage for links with `.text-*` class (e.g. `.text-success`)
+// @deprecated as of v3.x with no replacement, fixed percentages do not propagate well for all colors; manually define them for each theme color in `$text-theme-colors`.
+
+$emphasized-link-hover-darken-percentage: 15% !default;
+
+// Paragraph
+
+$paragraph-margin-bottom: var(--p-margin-bottom, 1rem) !default;
+
+// Display
+
+$display-line-height: $headings-line-height !default;
+
+// .display-1
+
+$display1-size: 6rem !default;
+$display1-weight: 300 !default;
+
+$display-1: () !default;
+$display-1: map-deep-merge(
+	(
+		font-size: var(--display-1-font-size, $display1-size),
+		font-weight: var(--display-1-font-weight, $display1-weight),
+		line-height: var(--display-1-line-height, $display-line-height),
+	),
+	$display-1
+);
+
+// .display-2
+
+$display2-size: 5.5rem !default;
+$display2-weight: 300 !default;
+
+$display-2: () !default;
+$display-2: map-deep-merge(
+	(
+		font-size: var(--display-2-font-size, $display2-size),
+		font-weight: var(--display-2-font-weight, $display2-weight),
+		line-height: var(--display-2-line-height, $display-line-height),
+	),
+	$display-2
+);
+
+// .display-3
+
+$display3-size: 4.5rem !default;
+$display3-weight: 300 !default;
+
+$display-3: () !default;
+$display-3: map-deep-merge(
+	(
+		font-size: var(--display-3-font-size, $display3-size),
+		font-weight: var(--display-3-font-weight, $display3-weight),
+		line-height: var(--display-3-line-height, $display-line-height),
+	),
+	$display-3
+);
+
+// .display-4
+
+$display4-size: 3.5rem !default;
+$display4-weight: 300 !default;
+
+$display-4: () !default;
+$display-4: map-deep-merge(
+	(
+		font-size: var(--display-4-font-size, $display4-size),
+		font-weight: var(--display-4-font-weight, $display4-weight),
+		line-height: var(--display-4-line-height, $display-line-height),
+	),
+	$display-4
+);
+
+$lead-font-size: calc(#{$font-size-base} * 1.25) !default;
+$lead-font-weight: 300 !default;
+
+$small-font-size: 80% !default;
+
+$text-muted: $gray-500 !default;
+
+$blockquote-small-color: $gray-600 !default;
+$blockquote-small-font-size: $small-font-size !default;
+$blockquote-font-size: calc(#{$font-size-base} * 1.25) !default;
+
+$hr-border-color: rgba(var(--black-values), 0.1) !default;
+$hr-border-width: $border-width !default;
+$hr-margin-y: $spacer !default;
+
+$mark-padding: 0.2em !default;
+
+$dt-font-weight: $font-weight-bold !default;
+
+$code-color: $pink !default;
+$code-font-size: 87.5% !default;
+
+$kbd-bg: $gray-900 !default;
+$kbd-color: $white !default;
+$kbd-font-size: $code-font-size !default;
+$kbd-padding-x: 0.4rem !default;
+$kbd-padding-y: 0.2rem !default;
+$kbd-box-shadow: inset 0 -0.1rem 0 rgba($black, 0.25) !default;
+
+$nested-kbd-font-weight: $font-weight-bold !default;
+
+$pre-color: $gray-900 !default;
+$pre-scrollable-max-height: 340px !default;
+
+$list-inline-padding: 0.5rem !default;
+
+$mark-bg: #fcf8e3 !default;
+
+// fieldset
+
+// `min-width`: Browsers set a default `min-width: min-content;` on fieldsets, unlike e.g. `<div>`s, which have `min-width: 0;` by default. So we reset that to ensure fieldsets behave more like a standard block element.
+// See https://github.com/twbs/bootstrap/issues/12359 and https://html.spec.whatwg.org/multipage/#the-fieldset-and-legend-elements
+// `padding`: Reset the default outline behavior of fieldsets so they don't affect page layout.
+
+$fieldset: () !default;
+$fieldset: map-merge(
+	(
+		border: 0,
+		margin: 0,
+		min-width: 0,
+		padding: 0,
+	),
+	$fieldset
+);
+
+// legend
+
+// `color`: Correct the color inheritance from `fieldset` elements in IE
+// `max-width`: Correct the text wrapping in Edge and IE
+// `white-space`: Correct the text wrapping in Edge and IE
+// `width`: Correct the text wrapping in Edge and IE
+
+$legend: () !default;
+$legend: map-merge(
+	(
+		color: inherit,
+		display: block,
+		font-size: 1.5rem,
+		line-height: inherit,
+		margin-bottom: 0.5rem,
+		max-width: 100%,
+		padding: 0,
+		white-space: normal,
+		width: 100%,
+	),
+	$legend
+);
+
+// Buttons + Forms
+
+$label-margin-bottom: 0.5rem !default;
+
+$input-btn-font-family: null !default;
+$input-btn-font-size: $font-size-base !default;
+$input-btn-line-height: $line-height-base !default;
+$input-btn-padding-x: 0.75rem !default;
+$input-btn-padding-y: 0.375rem !default;
+
+$input-btn-focus-width: 0.2rem !default;
+
+$input-btn-focus-color: rgba(var(--primary-values), 0.25) !default;
+$input-btn-focus-box-shadow: $component-focus-box-shadow !default;
+
+$input-btn-font-size-sm: $font-size-sm !default;
+$input-btn-line-height-sm: $line-height-sm !default;
+$input-btn-padding-x-sm: 0.5rem !default;
+$input-btn-padding-y-sm: 0.25rem !default;
+
+$input-btn-font-size-lg: $font-size-lg !default;
+$input-btn-line-height-lg: $line-height-lg !default;
+$input-btn-padding-x-lg: 1rem !default;
+$input-btn-padding-y-lg: 0.5rem !default;
+
+$input-btn-border-width: $border-width !default;
+
+// Print
+
+$print-body-min-width: map-get($grid-breakpoints, 'lg') !default;
+$print-page-size: a3 !default;

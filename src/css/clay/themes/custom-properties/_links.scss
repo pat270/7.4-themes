@@ -1,0 +1,369 @@
+$single-link-font-weight: $font-weight-semi-bold !default;
+
+$component-link: () !default;
+$component-link: map-deep-merge(
+	(
+		border-radius: 1px,
+		color: var(--component-link-color, $gray-600),
+		transition: box-shadow 0.15s ease-in-out,
+		hover: (
+			color: var(--component-link-hover-color, $gray-700),
+		),
+		focus: (
+			color: var(--component-link-hover-color, $gray-700),
+			box-shadow: $component-focus-box-shadow,
+			outline: 0,
+		),
+	),
+	$component-link
+);
+
+$link-primary: () !default;
+$link-primary: map-deep-merge(
+	(
+		border-radius: 1px,
+		color: var(--link-primary-color, $primary),
+		transition: box-shadow 0.15s ease-in-out,
+		hover: (
+			color: var(--link-primary-hover-color, $primary-d2),
+		),
+		focus: (
+			color: var(--link-primary-hover-color, $primary-d2),
+			box-shadow: $component-focus-box-shadow,
+			outline: 0,
+		),
+	),
+	$link-primary
+);
+
+$link-secondary: () !default;
+$link-secondary: map-deep-merge(
+	(
+		border-radius: 1px,
+		color: var(--link-secondary-color, $secondary),
+		transition: box-shadow 0.15s ease-in-out,
+		hover: (
+			color: var(--link-secondary-hover-color, $gray-900),
+		),
+		focus: (
+			color: var(--link-secondary-hover-color, $gray-900),
+			box-shadow: $component-focus-box-shadow,
+			outline: 0,
+		),
+	),
+	$link-secondary
+);
+
+// Link Outline
+
+/// @deprecated as of v3.4.0 use the Sass map `$link-outline` instead
+
+$link-outline-border-radius: $border-radius !default;
+
+/// @deprecated as of v3.4.0 use the Sass map `$link-outline` instead
+
+$link-outline-border-width: 0.0625rem !default;
+
+/// @deprecated as of v3.4.0 use the Sass map `$link-outline` instead
+
+$link-outline-font-size: $font-size-sm !default;
+
+/// @deprecated as of v3.4.0 use the Sass map `$link-outline` instead
+
+$link-outline-font-weight: $font-weight-semi-bold !default;
+
+/// @deprecated as of v3.4.0 use the Sass map `$link-outline` instead
+
+$link-outline-line-height: 1.15 !default;
+
+/// @deprecated as of v3.4.0 use the Sass map `$link-outline` instead
+
+$link-outline-padding-x: 0.75rem !default;
+
+/// @deprecated as of v3.4.0 use the Sass map `$link-outline` instead
+
+$link-outline-padding-y: 0.4375rem !default;
+
+/// @deprecated as of v3.4.0 use the Sass map `$link-outline` instead
+
+$link-outline-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+	border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !default;
+
+$link-outline: () !default;
+$link-outline: map-deep-merge(
+	(
+		align-items: center,
+		background-color: transparent,
+		border-color: transparent,
+		border-radius: var(--link-outline-border-radius, $link-outline-border-radius),
+		border-style: solid,
+		border-width: var(--link-outline-border-width, $link-outline-border-width),
+		display: inline-flex,
+		font-size: var(--link-outline-font-size, $link-outline-font-size),
+		font-weight: var(--link-outline-font-weight, $link-outline-font-weight),
+		justify-content: center,
+		line-height: var(--link-outline-line-height, $link-outline-line-height),
+		padding-bottom: var(--link-outline-padding-y, $link-outline-padding-y),
+		padding-left: var(--link-outline-padding-y, $link-outline-padding-x),
+		padding-right: var(--link-outline-padding-y, $link-outline-padding-x),
+		padding-top: var(--link-outline-padding-y, $link-outline-padding-y),
+		transition: var(--link-outline-transition, $link-outline-transition),
+		vertical-align: middle,
+		hover: (
+			text-decoration: none,
+		),
+		disabled: (
+			active: (
+				pointer-events: none,
+			),
+		),
+		lexicon-icon: (
+			margin-top: 0,
+		),
+	),
+	$link-outline
+);
+
+$link-outline-primary: () !default;
+$link-outline-primary: map-deep-merge(
+	(
+		border-color: var(--link-outline-primary-border-color, $primary),
+		color: var(--link-outline-primary-color, $primary),
+		hover: (
+			background-color: var(--link-outline-primary-hover-bg-color, $primary-l3),
+			color: var(--link-outline-primary-hover-color, $primary),
+		),
+		focus: (
+			background-color: var(--link-outline-primary-hover-bg-color, $primary-l3),
+			box-shadow: var(--link-outline-primary-focus-box-shadow, $component-focus-box-shadow),
+			color: var(--link-outline-primary-hover-color, $primary),
+			outline: 0,
+		),
+		btn-focus-box-shadow: $c-unset,
+		btn-focus-outline: $c-unset,
+		active: (
+			background-color: var(--link-outline-primary-active-bg-color, #e6edf8),
+			color: var(--link-outline-primary-active-color, $primary),
+		),
+		disabled: (
+			background-color: var(--link-outline-primary-disabled-bg-color, transparent),
+			box-shadow: none,
+			color: var(--link-outline-primary-disabled-color, $primary),
+			cursor: $disabled-cursor,
+			opacity: var(--link-outline-primary-disabled-opacity, 0.4),
+		),
+	),
+	$link-outline-primary
+);
+
+$link-outline-secondary: () !default;
+$link-outline-secondary: map-deep-merge(
+	(
+		border-color: $secondary-l2,
+		color: $secondary,
+		hover: (
+			background-color: rgba($gray-900, 0.03),
+			color: $gray-900,
+		),
+		focus: (
+			background-color: rgba($gray-900, 0.03),
+			box-shadow: map-get($btn-outline-secondary, focus-box-shadow),
+			color: $gray-900,
+			outline: 0,
+		),
+		btn-focus-box-shadow: map-get($btn-outline-secondary, focus-box-shadow),
+		btn-focus-outline: 0,
+		active: (
+			background-color: rgba($gray-900, 0.06),
+			color: $gray-900,
+		),
+		disabled: (
+			background-color: transparent,
+			box-shadow: none,
+			color: $secondary,
+			cursor: $btn-disabled-cursor,
+			opacity: $btn-disabled-opacity,
+		),
+	),
+	$link-outline-secondary
+);
+
+// Link Monospaced
+
+/// @deprecated as of v3.4.0 use the Sass map `$link-monospaced` instead
+
+$link-monospaced-size: $btn-monospaced-size-sm !default;
+
+$link-monospaced: () !default;
+$link-monospaced: map-deep-merge(
+	(
+		align-items: center,
+		display: inline-flex,
+		height: $link-monospaced-size,
+		justify-content: center,
+		overflow: hidden,
+		padding-bottom: 0,
+		padding-left: 0,
+		padding-right: 0,
+		padding-top: 0,
+		vertical-align: middle,
+		width: $link-monospaced-size,
+		lexicon-icon: (
+			margin-top: 0,
+		),
+	),
+	$link-monospaced
+);
+
+// .component-title
+
+$component-title: () !default;
+$component-title: map-deep-merge(
+	(
+		color: $gray-900,
+		font-size: 1rem,
+		font-weight: $headings-font-weight,
+		line-height: 1.25,
+		margin-bottom:
+			calc((#{$dropdown-action-toggle-size} - (1em * 1.25)) / 2),
+		margin-top: calc((#{$dropdown-action-toggle-size} - (1em * 1.25)) / 2),
+	),
+	$component-title
+);
+
+$component-title-link: () !default;
+$component-title-link: map-deep-merge(
+	(
+		border-radius: 1px,
+		color: $gray-900,
+		transition: box-shadow 0.15s ease-in-out,
+		hover: (
+			color: clay-darken($gray-900, 15%),
+		),
+		focus: (
+			color: clay-darken($gray-900, 15%),
+			box-shadow: $component-focus-box-shadow,
+			outline: 0,
+		),
+	),
+	$component-title-link
+);
+
+$component-title: map-deep-merge(
+	$component-title,
+	(
+		href: $component-title-link,
+	)
+);
+
+// .component-subtitle
+
+$component-subtitle: () !default;
+$component-subtitle: map-deep-merge(
+	(
+		color: $gray-600,
+		font-weight: $font-weight-semi-bold,
+		line-height: 1.45,
+		margin-bottom: 0,
+	),
+	$component-subtitle
+);
+
+$component-subtitle-link: () !default;
+$component-subtitle-link: map-deep-merge(
+	(
+		border-radius: 1px,
+		color: $gray-600,
+		transition: box-shadow 0.15s ease-in-out,
+		hover: (
+			color: $gray-900,
+		),
+		focus: (
+			color: $gray-900,
+			box-shadow: $component-focus-box-shadow,
+			outline: 0,
+		),
+	),
+	$component-subtitle-link
+);
+
+$component-subtitle: map-deep-merge(
+	$component-subtitle,
+	(
+		href: $component-subtitle-link,
+	)
+);
+
+// .component-action
+
+$component-action: () !default;
+$component-action: map-deep-merge(
+	(
+		align-items: center,
+		background-color: transparent,
+		border-color: transparent,
+		border-radius: $border-radius,
+		border-width: 0,
+		color: $secondary,
+		display: inline-flex,
+		font-size: 1rem,
+		height: map-get($link-monospaced, height),
+		justify-content: center,
+		overflow: hidden,
+		padding: 0,
+		transition: $btn-transition,
+		vertical-align: middle,
+		width: map-get($link-monospaced, width),
+		hover: (
+			background-color: rgba($gray-900, 0.03),
+			color: $gray-900,
+		),
+		focus: (
+			background-color: rgba($gray-900, 0.03),
+			box-shadow: map-get($btn-secondary, focus-box-shadow),
+			color: $gray-900,
+			outline: 0,
+		),
+		btn-focus-box-shadow: map-get($btn-secondary, focus-box-shadow),
+		btn-focus-outline: 0,
+		active: (
+			background-color: rgba($gray-900, 0.06),
+			color: $gray-900,
+		),
+		disabled: (
+			background-color: transparent,
+			box-shadow: none,
+			color: $secondary,
+			cursor: $disabled-cursor,
+			opacity: $btn-disabled-opacity,
+			active: (
+				pointer-events: none,
+			),
+		),
+		lexicon-icon: (
+			margin-top: 0,
+		),
+	),
+	$component-action
+);
+
+// .component-text
+
+$component-text: () !default;
+
+// .component-icon
+
+$component-icon: () !default;
+$component-icon: map-deep-merge(
+	(
+		align-items: center,
+		display: inline-flex,
+		height: 32px,
+		justify-content: center,
+		width: 32px,
+		lexicon-icon: (
+			margin-top: 0,
+		),
+	),
+	$component-icon
+);

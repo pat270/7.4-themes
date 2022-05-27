@@ -1,0 +1,427 @@
+// .sticker
+
+$sticker-border-color: null !default;
+$sticker-border-radius: $border-radius !default;
+$sticker-border-style: null !default;
+$sticker-border-width: null !default;
+$sticker-color: $gray-900 !default;
+$sticker-font-size: 1rem !default; // 16px
+$sticker-font-weight: $font-weight-bold !default;
+$sticker-size: 2rem !default; // 32px
+
+$sticker-inline-item-font-size: null !default;
+
+$sticker: () !default;
+$sticker: map-deep-merge(
+	(
+		align-items: center,
+		border-color: var(--sticker-border-color),
+		border-radius: clay-enable-rounded(var(--sticker-border-radius, $sticker-border-radius)),
+		border-style: $sticker-border-style,
+		border-width: var(--sticker-border-width),
+		color: var(--sticker-color, $sticker-color),
+		height: var(--sticker-size, $sticker-size),
+		line-height: var(--sticker-size, $sticker-size),
+		display: inline-flex,
+		font-size: var(--sticker-font-size, $sticker-font-size),
+		font-weight: var(--sticker-font-weight, $sticker-font-weight),
+		justify-content: center,
+		position: relative,
+		text-align: center,
+		vertical-align: middle,
+		width: var(--sticker-size, $sticker-size),
+		inline-item: (
+			font-size: $sticker-inline-item-font-size,
+			justify-content: center,
+			lexicon-icon: (
+				margin-top: 0,
+			),
+		),
+		lexicon-icon: (
+			margin-top: 0,
+		),
+	),
+	$sticker
+);
+
+// .sticker-overlay
+
+$sticker-overlay: () !default;
+$sticker-overlay: map-merge(
+	(
+		align-items: center,
+		border-radius: inherit,
+		bottom: 0,
+		display: flex,
+		justify-content: center,
+		left: 0,
+		overflow: hidden,
+		position: absolute,
+		right: 0,
+		top: 0,
+	),
+	$sticker-overlay
+);
+
+// .sticker-sm
+
+$sticker-sm: () !default;
+$sticker-sm: map-deep-merge(
+	(
+		font-size: var(--sticker-sm-font-size, 0.75rem),
+		height: var(--sticker-sm-size, 1.5rem),
+		line-height: var(--sticker-sm-size, 1.5rem),
+		width: var(--sticker-sm-size, 1.5rem),
+		sticker-outside: (
+			left: calc(var(--sticker-sm-size, 1.5rem) * -0.5),
+			top: calc(var(--sticker-sm-size, 1.5rem) * -0.5),
+			sticker-bottom-left: (
+				bottom: calc(var(--sticker-sm-size, 1.5rem) * -0.5),
+				top: auto,
+			),
+			sticker-bottom-right: (
+				bottom: calc(var(--sticker-sm-size, 1.5rem) * -0.5),
+				left: auto,
+				right: calc(var(--sticker-sm-size, 1.5rem) * -0.5),
+				top: auto,
+			),
+			sticker-top-right: (
+				left: auto,
+				right: calc(var(--sticker-sm-size, 1.5rem) * -0.5),
+			),
+		),
+	),
+	$sticker-sm
+);
+
+// .sticker-lg
+
+$sticker-lg: () !default;
+$sticker-lg: map-deep-merge(
+	(
+		font-size: var(--sticker-lg-font-size, 1.25rem),
+		height: var(--sticker-lg-size, 2.5rem),
+		line-height: var(--sticker-lg-size, 2.5rem),
+		width: var(--sticker-lg-size, 2.5rem),
+		sticker-outside: (
+			left: calc(var(--sticker-lg-size, 2.5rem) * -0.5),
+			top: calc(var(--sticker-lg-size, 2.5rem) * -0.5),
+			sticker-bottom-left: (
+				bottom: calc(var(--sticker-lg-size, 2.5rem) * -0.5),
+				top: auto,
+			),
+			sticker-bottom-right: (
+				bottom: calc(var(--sticker-lg-size, 2.5rem) * -0.5),
+				left: auto,
+				right: calc(var(--sticker-lg-size, 2.5rem) * -0.5),
+				top: auto,
+			),
+			sticker-top-right: (
+				left: auto,
+				right: calc(var(--sticker-lg-size, 2.5rem) * -0.5),
+			),
+		),
+	),
+	$sticker-lg
+);
+
+// .sticker-xl
+
+$sticker-xl: () !default;
+$sticker-xl: map-deep-merge(
+	(
+		font-size: var(--sticker-xl-font-size, 1.5rem),
+		height: var(--sticker-xl-size, 3rem),
+		line-height: var(--sticker-xl-size, 3rem),
+		width: var(--sticker-xl-size, 3rem),
+		sticker-outside: (
+			left: calc(var(--sticker-xl-size, 0.5) * -0.5),
+			top: calc(var(--sticker-xl-size, 0.5) * -0.5),
+			sticker-bottom-left: (
+				bottom: calc(var(--sticker-xl-size, 0.5) * -0.5),
+				top: auto,
+			),
+			sticker-bottom-right: (
+				bottom: calc(var(--sticker-xl-size, 0.5) * -0.5),
+				left: auto,
+				right: calc(var(--sticker-xl-size, 0.5) * -0.5),
+				top: auto,
+			),
+			sticker-top-right: (
+				left: auto,
+				right: -1.5rem,
+			),
+		),
+	),
+	$sticker-xl
+);
+
+$sticker-sizes: () !default;
+$sticker-sizes: map-deep-merge(
+	(
+		sticker-sm: $sticker-sm,
+		sticker-lg: $sticker-lg,
+		sticker-xl: $sticker-xl,
+	),
+	$sticker-sizes
+);
+
+// Sticker Positions
+
+$sticker-inside-offset: 1rem !default; // 16px
+
+// .sticker-bottom-left
+
+$sticker-bottom-left: () !default;
+$sticker-bottom-left: map-merge(
+	(
+		bottom: var(--sticker-inside-offset, $sticker-inside-offset),
+		left: var(--sticker-inside-offset, $sticker-inside-offset),
+		position: absolute,
+		right: auto,
+		top: auto,
+	),
+	$sticker-bottom-left
+);
+
+// .sticker-bottom-right
+
+$sticker-bottom-right: () !default;
+$sticker-bottom-right: map-merge(
+	(
+		bottom: var(--sticker-inside-offset, $sticker-inside-offset),
+		left: auto,
+		position: absolute,
+		right: var(--sticker-inside-offset, $sticker-inside-offset),
+		top: auto,
+	),
+	$sticker-bottom-right
+);
+
+// .sticker-top-left
+
+$sticker-top-left: () !default;
+$sticker-top-left: map-merge(
+	(
+		left: var(--sticker-inside-offset, $sticker-inside-offset),
+		position: absolute,
+		top: var(--sticker-inside-offset, $sticker-inside-offset),
+	),
+	$sticker-top-left
+);
+
+// .sticker-top-right
+
+$sticker-top-right: () !default;
+$sticker-top-right: map-merge(
+	(
+		left: auto,
+		position: absolute,
+		right: var(--sticker-inside-offset, $sticker-inside-offset),
+		top: var(--sticker-inside-offset, $sticker-inside-offset),
+	),
+	$sticker-top-right
+);
+
+// .sticker-outside
+
+$sticker-outside-offset: calc(var(--sticker-size, #{$sticker-size}) * -0.5) !default;
+
+$sticker-outside: () !default;
+$sticker-outside: map-deep-merge(
+	(
+		left: $sticker-outside-offset,
+		top: $sticker-outside-offset,
+		sticker-bottom-left: (
+			bottom: $sticker-outside-offset,
+			top: auto,
+		),
+		sticker-bottom-right: (
+			bottom: $sticker-outside-offset,
+			left: auto,
+			right: $sticker-outside-offset,
+			top: auto,
+		),
+		sticker-top-right: (
+			left: auto,
+			right: $sticker-outside-offset,
+		),
+	),
+	$sticker-outside
+);
+
+// .sticker-circle
+
+$sticker-circle-border-radius: $rounded-circle-border-radius !default;
+
+$sticker-circle: () !default;
+$sticker-circle: map-deep-merge(
+	(
+		border-radius: clay-enable-rounded(var(--sticker-circle-border-radius, $sticker-circle-border-radius)),
+	),
+	$sticker-circle
+);
+
+// .sticker-user-icon
+
+$sticker-user-icon: () !default;
+$sticker-user-icon: map-deep-merge(
+	(
+		background-color: var(--sticker-user-icon-bg-color, $white),
+		background-image: var(--sticker-user-icon-bg-image),
+		border-radius: var(--sticker-user-icon-border-radius, $rounded-circle-border-radius),
+		box-shadow: var(--sticker-user-icon-box-shadow, 0 0 0 1px $gray-300),
+	),
+	$sticker-user-icon
+);
+
+// .sticker-primary
+
+$sticker-primary-bg: $white !default;
+$sticker-primary-border-color: null !default;
+$sticker-primary-color: $primary !default;
+
+$sticker-primary: () !default;
+$sticker-primary: map-deep-merge(
+	(
+		background-color: var(--sticker-primary-bg-color, $sticker-primary-bg),
+		background-image: var(--sticker-primary-bg-image),
+		border-color: var(--sticker-primary-border-color, $sticker-primary-border-color),
+		color: var(--sticker-primary-color, $sticker-primary-color),
+	),
+	$sticker-primary
+);
+
+// .sticker-secondary
+
+$sticker-secondary-bg: $white !default;
+$sticker-secondary-border-color: null !default;
+$sticker-secondary-color: $secondary !default;
+
+$sticker-secondary: () !default;
+$sticker-secondary: map-deep-merge(
+	(
+		background-color: var(--sticker-secondary-bg-color, $sticker-secondary-bg),
+		background-image: var(--sticker-secondary-bg-image),
+		border-color: var(--sticker-secondary-border-color, $sticker-secondary-border-color),
+		color: var(--sticker-secondary-color, $sticker-secondary-color),
+	),
+	$sticker-secondary
+);
+
+// .sticker-info
+
+$sticker-info-bg: $white !default;
+$sticker-info-border-color: null !default;
+$sticker-info-color: $info !default;
+
+$sticker-info: () !default;
+$sticker-info: map-deep-merge(
+	(
+		background-color: var(--sticker-info-bg-color, $sticker-info-bg),
+		background-image: var(--sticker-info-bg-image),
+		border-color: var(--sticker-info-border-color, $sticker-info-border-color),
+		color: var(--sticker-info-color, $sticker-info-color),
+	),
+	$sticker-info
+);
+
+// .sticker-success
+
+$sticker-success-bg: $white !default;
+$sticker-success-border-color: null !default;
+$sticker-success-color: $success !default;
+
+$sticker-success: () !default;
+$sticker-success: map-deep-merge(
+	(
+		background-color: var(--sticker-success-bg-color, $sticker-success-bg),
+		background-image: var(--sticker-success-bg-image),
+		border-color: var(--sticker-success-border-color, $sticker-success-border-color),
+		color: var(--sticker-success-color, $sticker-success-color),
+	),
+	$sticker-success
+);
+
+// .sticker-warning
+
+$sticker-warning-bg: $white !default;
+$sticker-warning-border-color: null !default;
+$sticker-warning-color: $warning !default;
+
+$sticker-warning: () !default;
+$sticker-warning: map-deep-merge(
+	(
+		background-color: var(--sticker-warning-bg-color, $sticker-warning-bg),
+		background-image: var(--sticker-warning-bg-image),
+		border-color: var(--sticker-warning-border-color, $sticker-warning-border-color),
+		color: var(--sticker-warning-color, $sticker-warning-color),
+	),
+	$sticker-warning
+);
+
+// .sticker-danger
+
+$sticker-danger-bg: $white !default;
+$sticker-danger-border-color: null !default;
+$sticker-danger-color: $danger !default;
+
+$sticker-danger: () !default;
+$sticker-danger: map-deep-merge(
+	(
+		background-color: var(--sticker-danger-bg-color, $sticker-danger-bg),
+		background-image: var(--sticker-danger-bg-image),
+		border-color: var(--sticker-danger-border-color, $sticker-danger-border-color),
+		color: var(--sticker-danger-color, $sticker-danger-color),
+	),
+	$sticker-danger
+);
+
+// .sticker-light
+
+$sticker-light-bg: $dark !default;
+$sticker-light-border-color: null !default;
+$sticker-light-color: $light !default;
+
+$sticker-light: () !default;
+$sticker-light: map-deep-merge(
+	(
+		background-color: var(--sticker-light-bg-color, $sticker-light-bg),
+		background-image: var(--sticker-light-bg-image),
+		border-color: var(--sticker-light-border-color, $sticker-light-border-color),
+		color: var(--sticker-light-color, $sticker-light-color),
+	),
+	$sticker-light
+);
+
+// .sticker-dark
+
+$sticker-dark-bg: $white !default;
+$sticker-dark-border-color: null !default;
+$sticker-dark-color: $dark !default;
+
+$sticker-dark: () !default;
+$sticker-dark: map-deep-merge(
+	(
+		background-color: var(--sticker-dark-bg-color, $sticker-dark-bg),
+		background-image: var(--sticker-dark-bg-image),
+		border-color: var(--sticker-dark-border-color, $sticker-dark-border-color),
+		color: var(--sticker-dark-color, $sticker-dark-color),
+	),
+	$sticker-dark
+);
+
+$sticker-palette: () !default;
+$sticker-palette: map-deep-merge(
+	(
+		primary: $sticker-primary,
+		secondary: $sticker-secondary,
+		success: $sticker-success,
+		info: $sticker-info,
+		warning: $sticker-warning,
+		danger: $sticker-danger,
+		light: $sticker-light,
+		dark: $sticker-dark,
+	),
+	$sticker-palette
+);
