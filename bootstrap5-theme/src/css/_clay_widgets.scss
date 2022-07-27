@@ -1,0 +1,122 @@
+// @if ($enable-grid-classes) {
+// 	%clay-custom-grid-wrapper {
+// 		display: flex;
+// 		flex-wrap: wrap;
+// 		list-style: none;
+// 		margin-bottom: 0;
+// 		padding-left: 0;
+
+// 		.container &,
+// 		.container-fluid & {
+// 			margin-left: math-sign($grid-gutter-width * 0.5);
+// 			margin-right: math-sign($grid-gutter-width * 0.5);
+// 		}
+// 	}
+// }
+
+// @import 'clay/components/_aspect-ratio.scss';
+// @import 'clay/components/_button-groups.scss';
+
+// .form-control-tag-group {
+// 	@include clay-container($form-control-tag-group);
+
+// 	.autofit-row {
+// 		@include clay-container($form-control-tag-group-autofit-row);
+// 	}
+
+// 	.autofit-col {
+// 		@include clay-container($form-control-tag-group-autofit-col);
+
+// 		.form-control-inset {
+// 			width: auto;
+// 		}
+// 	}
+
+// 	.input-group-item {
+// 		@include clay-container($form-control-tag-group-input-group-item);
+// 	}
+
+// 	.inline-item {
+// 		@include clay-container($form-control-tag-group-inline-item);
+// 	}
+
+// 	.btn {
+// 		@include clay-button-variant($form-control-tag-group-btn);
+// 	}
+
+// 	.btn-monospaced {
+// 		@include clay-button-variant($form-control-tag-group-btn-monospaced);
+// 	}
+
+// 	.component-action {
+// 		@include clay-link($form-control-tag-group-component-action);
+// 	}
+// }
+
+// .form-control-inset {
+// 	@include clay-form-control-variant($form-control-inset);
+
+// 	// IE10+
+// 	// `::-ms-clear` disable clear button at the edge of an `<input type="text">`
+// 	// `::-ms-reveal` disable password reveal button on `<input type="password">`
+
+// 	&::-ms-clear,
+// 	&::-ms-reveal {
+// 		display: none;
+// 		height: 0;
+// 		width: 0;
+// 	}
+// }
+
+// @import 'clay/components/_custom-forms.scss';
+// @import 'clay/components/_labels.scss';
+
+// Nav Btn
+
+// .nav-btn {
+// 	@include clay-button-variant($nav-btn);
+
+// 	&.btn-link {
+// 		@include clay-button-variant(map-get($nav-btn, btn-link));
+// 	}
+// }
+
+// // Nav Btn Monospaced
+
+// .nav-btn-monospaced {
+// 	@include clay-button-variant($nav-btn-monospaced);
+// }
+
+// // Nav Link Monospaced
+
+// .nav-link-monospaced {
+// 	@include clay-link($nav-link-monospaced);
+// }
+
+// @import 'clay/components/_navbar.scss';
+
+// @import 'clay/components/_cards.scss';
+// @import 'clay/components/_management-bar.scss';
+
+// .pagination-bar {
+// 	@include clay-pagination-variant($pagination-bar);
+// }
+
+// // Pagination Items Per Page
+
+// .pagination-items-per-page {
+// 	@include clay-pagination-items-per-page-variant($pagination-items-per-page);
+// }
+
+// .page-item .dropdown-menu,
+// .pagination-items-per-page .dropdown-menu {
+// 	margin-bottom: $pagination-dropdown-menu-spacer-y;
+// 	margin-top: $pagination-dropdown-menu-spacer-y;
+// }
+
+// .pagination-results {
+// 	@include clay-css($pagination-results);
+// }
+
+// @import 'clay/components/_sidebar.scss';
+// @import 'clay/components/_side-navigation.scss';

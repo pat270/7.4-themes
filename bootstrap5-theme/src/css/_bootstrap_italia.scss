@@ -1,0 +1,30 @@
+@import '_clay_variables.scss';
+
+@import 'bootstrap-italia/src/scss/_functions.scss';
+
+@import 'bootstrap-italia/src/scss/utilities/colors_vars.scss';
+
+@import 'bootstrap-italia/src/scss/_variables.scss';
+
+$enable-caret: false !default;
+$enable-c-inner: false !default;
+
+$input-border-color: $neutral-1-a7 !default;
+
+$input-border-top-width: $input-border-width !default;
+$input-border-right-width: $input-border-width !default;
+$input-border-bottom-width: 0.0625rem !default;
+$input-border-left-width: $input-border-width !default;
+
+$form-control-tag-group-padding-y: 0.25rem !default;
+$custom-control-indicator-border-width: 0.0625rem !default;
+
+$dropdown-item-padding-x: 0 !default;
+$dropdown-item-padding-y: 24px !default;
+
+$dropdown-item-base: (
+	font-size: $link-list-font-size,
+	line-height: $link-list-line-height,
+) !default;
+
+@import 'bootstrap-italia/src/scss/bootstrap-italia.scss';

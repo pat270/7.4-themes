@@ -1,0 +1,14 @@
+@import '_clay_variables.scss';
+
+$enable-caret: false !default;
+$enable-c-inner: false !default;
+
+$form-control-tag-group-padding-y: 0.25rem !default;
+$custom-control-indicator-border-width: 0.0625rem !default;
+
+@import 'bootstrap5/scss/bootstrap.scss';
+
+$input-border-top-width: $input-border-width !default;
+$input-border-right-width: $input-border-width !default;
+$input-border-bottom-width: 0.0625rem !default;
+$input-border-left-width: $input-border-width !default;

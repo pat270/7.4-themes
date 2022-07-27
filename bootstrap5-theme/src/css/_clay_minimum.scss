@@ -1,0 +1,448 @@
+@import 'clay/functions/_global-functions.scss';
+
+@import 'clay/atlas-variables.scss';
+
+@import 'clay/components/_icons.scss';
+@import 'clay/components/_input-groups.scss';
+@import 'clay/components/_stickers.scss';
+
+%btn-unstyled {
+	@include clay-button-variant($btn-unstyled);
+}
+
+.btn.btn-unstyled {
+	@extend %btn-unstyled;
+}
+
+@each $size, $value in $btn-monospaced-sizes {
+	$placeholder: if(
+		starts-with($size, 'btn-monospaced'),
+		'%clay-#{$size}',
+		'%#{str-slice($size, 2)}'
+	);
+
+	$selector: if(
+		starts-with($size, 'btn-monospaced-'),
+		clay-str-replace($size, 'btn-monospaced', '.btn-monospaced.btn'),
+		if(
+			$size == 'btn-monospaced',
+			clay-str-replace($size, 'btn-monospaced', '.btn-monospaced'),
+			$size
+		)
+	);
+
+	#{$placeholder} {
+		@include clay-button-variant($value);
+	}
+
+	#{$selector} {
+		@extend #{$placeholder} !optional;
+	}
+}
+
+.dropdown-header {
+	@include clay-css($dropdown-header);
+
+	@include media-breakpoint-down(map-get($dropdown-header, breakpoint-down)) {
+		@include clay-css(map-get($dropdown-header, mobile));
+	}
+
+	&:first-child {
+		@include clay-css(map-get($dropdown-header, first-child));
+	}
+}
+
+.dropdown-subheader {
+	@include clay-css($dropdown-subheader);
+
+	&:first-child {
+		@include clay-css(map-get($dropdown-subheader, first-child));
+	}
+}
+
+.dropdown-caption {
+	@include clay-css($dropdown-caption);
+}
+
+.dropdown-item {
+	.form-check {
+		margin-bottom: 0;
+	}
+
+	.custom-control {
+		margin-bottom: 0;
+		margin-right: 0;
+		min-height: $custom-control-indicator-size;
+	}
+}
+
+// Dropdown Item Text
+
+.dropdown-item-text {
+	@include clay-css($dropdown-item-text);
+}
+
+.dropdown-section {
+	@include clay-css($dropdown-section);
+
+	.form-group + .form-group {
+		@include clay-css(
+			map-deep-get($dropdown-section, form-group, form-group)
+		);
+	}
+
+	.custom-control {
+		@include clay-css(map-get($dropdown-section, custom-control));
+	}
+
+	.custom-control-label {
+		@include clay-css(map-get($dropdown-section, custom-control-label));
+	}
+
+	.custom-control-label-text {
+		@include clay-css(
+			map-get($dropdown-section, custom-control-label-text)
+		);
+	}
+
+	&.active {
+		@include clay-css(map-get($dropdown-section, active));
+
+		.custom-control-label {
+			@include clay-css(
+				map-deep-get($dropdown-section, active, custom-control-label)
+			);
+		}
+	}
+}
+
+// Dropdown Footer
+
+.dropdown-footer {
+	@include clay-css($dropdown-footer);
+}
+
+// Dropdown Menu Indicator Start
+
+.dropdown-menu-indicator-start {
+	.dropdown-item-indicator-text-start {
+		padding-left: 0;
+	}
+
+	.dropdown-header,
+	.dropdown-subheader,
+	.dropdown-caption,
+	.dropdown-item {
+		padding-left: calc(#{$dropdown-item-padding-x} + #{$dropdown-item-indicator-size} +
+			#{$dropdown-item-indicator-spacer-x});
+		position: relative;
+	}
+
+	@if ($enable-c-inner) {
+		.dropdown-item {
+			.c-inner {
+				margin-left: math-sign(
+					$dropdown-item-padding-x +
+						$dropdown-item-indicator-size +
+						$dropdown-item-indicator-spacer-x
+				);
+			}
+		}
+	}
+}
+
+.dropdown-item-indicator-start {
+	@include clay-link($dropdown-item-indicator-start);
+}
+
+.dropdown-item-indicator-text-start {
+	@include clay-link($dropdown-item-indicator-text-start);
+}
+
+// Dropdown Menu Indicator End
+
+.dropdown-menu-indicator-end {
+	.dropdown-item-indicator-text-end {
+		padding-right: 0;
+	}
+
+	.dropdown-item {
+		padding-right: calc(#{$dropdown-item-padding-x} + #{$dropdown-item-indicator-size} +
+			#{$dropdown-item-indicator-spacer-x});
+		position: relative;
+
+		@if ($enable-c-inner) {
+			.c-inner {
+				margin-right: math-sign(
+					$dropdown-item-padding-x +
+						$dropdown-item-indicator-size +
+						$dropdown-item-indicator-spacer-x
+				);
+			}
+		}
+	}
+}
+
+.dropdown-item-indicator-end {
+	@include clay-link($dropdown-item-indicator-end);
+}
+
+.dropdown-item-indicator-text-end {
+	@include clay-link($dropdown-item-indicator-text-end);
+}
+
+
+// Autofit Row
+
+%autofit-row {
+	display: flex;
+	flex-wrap: nowrap;
+	width: 100%;
+
+	@at-root {
+		ul#{&} {
+			@include list-unstyled;
+		}
+	}
+}
+
+.autofit-row {
+	@extend %autofit-row;
+}
+
+// Autofit Row Center
+
+%autofit-row-center {
+	> .autofit-col {
+		justify-content: center;
+	}
+}
+
+.autofit-row-center {
+	@extend %autofit-row-center;
+}
+
+// Autofit Row End
+
+%autofit-row-end {
+	> .autofit-col {
+		justify-content: flex-end;
+	}
+}
+
+.autofit-row-end {
+	@extend %autofit-row-end;
+}
+
+// Autofit Padded
+
+%autofit-padded {
+	> .autofit-col {
+		padding-bottom: $autofit-padded-col-padding-y;
+		padding-left: $autofit-padded-col-padding-x;
+		padding-right: $autofit-padded-col-padding-x;
+		padding-top: $autofit-padded-col-padding-y;
+	}
+}
+
+.autofit-padded {
+	@extend %autofit-padded !optional;
+}
+
+%autofit-padded-no-gutters-x {
+	margin-left: math-sign($autofit-padded-col-padding-x);
+	margin-right: math-sign($autofit-padded-col-padding-x);
+	width: auto;
+
+	> .autofit-col {
+		padding-bottom: $autofit-padded-col-padding-y;
+		padding-left: $autofit-padded-col-padding-x;
+		padding-right: $autofit-padded-col-padding-x;
+		padding-top: $autofit-padded-col-padding-y;
+	}
+}
+
+.autofit-padded-no-gutters-x {
+	@extend %autofit-padded-no-gutters-x !optional;
+}
+
+%autofit-padded-no-gutters-y {
+	margin-bottom: math-sign($autofit-padded-col-padding-y);
+	margin-top: math-sign($autofit-padded-col-padding-y);
+	width: auto;
+
+	> .autofit-col {
+		padding-bottom: $autofit-padded-col-padding-y;
+		padding-left: $autofit-padded-col-padding-x;
+		padding-right: $autofit-padded-col-padding-x;
+		padding-top: $autofit-padded-col-padding-y;
+	}
+}
+
+.autofit-padded-no-gutters-y {
+	@extend %autofit-padded-no-gutters-y !optional;
+}
+
+%autofit-padded-no-gutters {
+	margin-bottom: math-sign($autofit-padded-col-padding-y);
+	margin-left: math-sign($autofit-padded-col-padding-x);
+	margin-right: math-sign($autofit-padded-col-padding-x);
+	margin-top: math-sign($autofit-padded-col-padding-y);
+	width: auto;
+
+	> .autofit-col {
+		padding-bottom: $autofit-padded-col-padding-y;
+		padding-left: $autofit-padded-col-padding-x;
+		padding-right: $autofit-padded-col-padding-x;
+		padding-top: $autofit-padded-col-padding-y;
+	}
+}
+
+.autofit-padded-no-gutters {
+	@extend %autofit-padded-no-gutters !optional;
+}
+
+%autofit-padded-no-gutters-sm {
+	@include clay-autofit-row($autofit-padded-no-gutters-sm);
+}
+
+.autofit-padded-no-gutters-sm {
+	@extend %autofit-padded-no-gutters-sm !optional;
+}
+
+// Autofit Columns
+
+%autofit-col {
+	display: flex;
+	flex-direction: column;
+	flex-shrink: 0;
+	min-height: 0;
+	position: relative;
+}
+
+.autofit-col {
+	@extend %autofit-col;
+}
+
+.autofit-col-shrink {
+	flex-shrink: 1;
+	min-width: 1rem;
+	word-wrap: break-word;
+}
+
+%autofit-col-expand {
+	flex-grow: 1;
+	flex-shrink: 1;
+	min-width: $autofit-col-expand-min-width;
+	word-wrap: break-word;
+}
+
+.autofit-col-expand {
+	@extend %autofit-col-expand;
+}
+
+// Autofit Section
+
+%autofit-section {
+	max-width: 100%;
+}
+
+.autofit-section {
+	@extend %autofit-section;
+}
+
+// Autofit Float
+
+%autofit-float {
+	@include clay-autofit-float;
+}
+
+.autofit-float {
+	@extend %autofit-float;
+}
+
+%autofit-float-sm-down {
+	@include media-breakpoint-down(sm) {
+		@include clay-autofit-float;
+	}
+}
+
+.autofit-float-sm-down {
+	@extend %autofit-float-sm-down;
+}
+
+// Autofit Float Md Down
+
+%autofit-float-md-down {
+	@include media-breakpoint-down(md) {
+		@include clay-autofit-float;
+	}
+}
+
+.autofit-float-md-down {
+	@extend %autofit-float-md-down;
+}
+
+// Autofit Float End
+
+%autofit-float-end {
+	@include clay-autofit-float;
+
+	justify-content: flex-end;
+}
+
+.autofit-float-end {
+	@extend %autofit-float-end;
+}
+
+%autofit-float-end-sm-down {
+	@include media-breakpoint-down(sm) {
+		@include clay-autofit-float;
+
+		justify-content: flex-end;
+	}
+}
+
+.autofit-float-end-sm-down {
+	@extend %autofit-float-end-sm-down;
+}
+
+%autofit-float-end-md-down {
+	@include media-breakpoint-down(md) {
+		@include clay-autofit-float;
+
+		justify-content: flex-end;
+	}
+}
+
+.autofit-float-end-md-down {
+	@extend %autofit-float-end-md-down;
+}
+
+.sr-only {
+	border: 0;
+	clip: rect(0, 0, 0, 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+.sr-only-focusable {
+	&:active,
+	&:focus {
+		clip: auto;
+		height: auto;
+		overflow: visible;
+		position: static;
+		white-space: normal;
+		width: auto;
+	}
+}
+
+.hide {
+	display: none !important;
+}

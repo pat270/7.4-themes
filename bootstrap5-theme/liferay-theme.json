@@ -1,0 +1,9 @@
+{
+  "LiferayTheme": {
+    "appServerPath": "/Users/pat270/liferay_projects/bundles/tomcat-9.0.56",
+    "deployPath": "/Users/pat270/liferay_projects/bundles/deploy",
+    "deployed": true,
+    "deploymentStrategy": "LocalAppServer",
+    "url": "http://localhost:8080"
+  }
+}
