@@ -1,0 +1,275 @@
+$enable-bs4-deprecated: false !default;
+
+$enable-alerts: true !default;
+$enable-application-bar: false !default;
+$enable-aspect-ratio: true !default;
+
+$enable-badges: true !default;
+$enable-badge-inline-item: false !default;
+$enable-badge-item: false !default;
+$enable-badge-pill: false !default;
+
+$enable-button-groups: true !default;
+$enable-buttons: true !default;
+$enable-breadcrumbs: true !default;
+$enable-cards: true !default;
+$enable-clay-color: false !default;
+$enable-code: true !default;
+$enable-custom-forms: true !default;
+$enable-date-picker: false !default;
+$enable-drilldown: false !default;
+$enable-dropdowns: true !default;
+$enable-dual-listbox: false !default;
+$enable-empty-state: true !default;
+$enable-forms: true !default;
+$enable-form-validation: true !default;
+$enable-icons: true !default;
+$enable-images: true !default;
+$enable-input-groups: true !default;
+$enable-labels: true !default;
+$enable-links: false !default;
+$enable-list-group: false !default;
+$enable-loaders: true !default;
+$enable-management-bar: false !default;
+$enable-media: false !default;
+$enable-menubar: false !default;
+$enable-modal: true !default;
+$enable-multi-step-nav: false !default;
+$enable-nav: true !default;
+$enable-navbar: true !default;
+$enable-navigation-bar: false !default;
+$enable-pagination: true !default;
+$enable-panels: false !default;
+$enable-popovers: true !default;
+$enable-progress-bars: false !default;
+$enable-quick-action: false !default;
+$enable-range: false !default;
+$enable-reboot: true !default;
+$enable-reorder: false !default;
+$enable-root: true !default;
+$enable-sheets: false !default;
+$enable-side-navigation: true !default;
+$enable-sidebar: true !default;
+$enable-slideout: false !default;
+$enable-stickers: true !default;
+$enable-tables: true !default;
+$enable-tbar: false !default;
+$enable-time: false !default;
+$enable-timelines: false !default;
+$enable-toggle-switch: true !default;
+$enable-tooltip: true !default;
+$enable-treeview: false !default;
+$enable-type: true !default;
+$enable-utilities-functional-important: true !default;
+$enable-utilities: true !default;
+
+// Alerts
+
+$alert-palette: () !default;
+$alert-palette: map-deep-merge(
+	(
+		primary: (
+			merge: false,
+		),
+		secondary: (
+			merge: false,
+		),
+		light: (
+			merge: false,
+		),
+		dark: (
+			merge: false,
+		),
+	),
+	$alert-palette
+);
+
+// Badges
+
+$badge-palette: () !default;
+$badge-palette: map-deep-merge(
+	(
+		primary: (
+			merge: false,
+		),
+		secondary: (
+			merge: false,
+		),
+		success: (
+			merge: false,
+		),
+		light: (
+			merge: false,
+		),
+		dark: (
+			merge: false,
+		),
+	),
+	$badge-palette
+);
+
+// Buttons
+
+$btn-sizes: () !default;
+$btn-sizes: map-deep-merge(
+	(
+		btn-lg: (
+			merge: false,
+		),
+	),
+	$btn-sizes
+);
+
+$btn-monospaced-sizes: () !default;
+$btn-monospaced-sizes: map-deep-merge(
+	(
+		btn-monospaced-lg: (
+			merge: false,
+		),
+	),
+	$btn-monospaced-sizes
+);
+
+$btn-palette: () !default;
+$btn-palette: map-deep-merge(
+	(
+		success: (
+			merge: false,
+		),
+		info: (
+			merge: false,
+		),
+		warning: (
+			merge: false,
+		),
+		danger: (
+			merge: false,
+		),
+		light: (
+			merge: false,
+		),
+		dark: (
+			merge: false,
+		),
+	),
+	$btn-palette
+);
+
+$btn-outline-palette: () !default;
+$btn-outline-palette: map-deep-merge(
+	(
+		success: (
+			merge: false,
+		),
+		info: (
+			merge: false,
+		),
+		warning: (
+			merge: false,
+		),
+		danger: (
+			merge: false,
+		),
+		light: (
+			merge: false,
+		),
+		dark: (
+			merge: false,
+		),
+	),
+	$btn-outline-palette
+);
+
+// Cards
+
+$card-header: () !default;
+$card-header: map-deep-merge((merge: false,),$card-header);
+
+$form-check-bottom-left: () !default;
+$form-check-bottom-left: map-deep-merge((merge: false,),$form-check-bottom-left);
+
+$form-check-bottom-right: () !default;
+$form-check-bottom-right: map-deep-merge((merge: false,),$form-check-bottom-right);
+
+$form-check-middle-left: () !default;
+$form-check-middle-left: map-deep-merge((merge: false,),$form-check-middle-left);
+
+$form-check-middle-right: () !default;
+$form-check-middle-right: map-deep-merge((merge: false,), $form-check-middle-right);
+
+$form-check-top-right: () !default;
+$form-check-top-right: map-deep-merge((
+	merge: false,
+),$form-check-top-right);
+
+$card-interactive: () !default;
+$card-interactive: map-deep-merge((
+	merge: false,
+), $card-interactive);
+
+$card-interactive-primary: () !default;
+$card-interactive-primary: map-deep-merge((
+	merge: false,
+), $card-interactive-primary);
+
+$card-interactive-secondary: () !default;
+$card-interactive-secondary: map-deep-merge((
+	merge: false,
+),$card-interactive-secondary);
+
+$card-type-template: () !default;
+$card-type-template: map-deep-merge((
+	merge: false,
+), $card-type-template);
+
+$template-card: () !default;
+$template-card: map-deep-merge((
+	merge: false,
+), $template-card);
+
+$template-card-horizontal: () !default;
+$template-card-horizontal: map-deep-merge((
+	merge: false,
+), $template-card-horizontal);
+
+// Labels
+
+$label-palette: () !default;
+$label-palette: map-deep-merge(
+	(
+		primary: (
+			merge: false,
+		),
+		dark: (
+			merge: false,
+		),
+		light: (
+			merge: false,
+		),
+		inverse-primary: (
+			merge: false,
+		),
+		inverse-light: (
+			merge: false,
+		),
+		inverse-dark: (
+			merge: false,
+		),
+	),
+	$label-palette
+);
+
+// Stickers
+
+$sticker-palette: () !default;
+$sticker-palette: map-deep-merge(
+	(
+		light: (
+			merge: false,
+		),
+		dark: (
+			merge: false,
+		),
+	),
+	$sticker-palette
+);
