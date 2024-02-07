@@ -1,0 +1,1 @@
+Applications Menu > Instance Settings > Instance Configuration > Look and Feel
